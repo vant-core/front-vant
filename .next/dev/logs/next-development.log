@@ -1,0 +1,1369 @@
+[00:00:01.563] Server  LOG     
+[00:00:01.563] Server  LOG        We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+[00:00:01.564] Server  LOG        The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+[00:00:01.564] Server  LOG        	- include was updated to add '.next/dev/types/**/*.ts'
+[00:00:01.564] Server  LOG     
+[00:00:01.564] Server  LOG        The following mandatory changes were made to your tsconfig.json:
+
+[00:00:01.564] Server  LOG        	- jsx was set to react-jsx (next.js uses the React automatic runtime)
+[00:00:01.565] Server  LOG     
+[00:00:01.873] Server  LOG      ✓ Ready in 1293ms
+[00:00:06.317] Server  LOG      ○ Compiling / ...
+[00:00:07.685] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:07.869] Browser ERROR   uncaughtError: Error: useApi deve ser usado dentro de ApiProvider
+[00:00:55.032] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:55.562] Browser ERROR   uncaughtError: Error: useApi deve ser usado dentro de ApiProvider
+[00:00:58.558] Browser ERROR   ./app/layout.tsx:42:9
+Parsing ecmascript source code failed
+  40 |       <body className={`font-sans antialiased`}>
+  41 |         <
+> 42 |         {children}
+     |         ^
+  43 |         <Analytics />
+  44 |       </body>
+  45 |     </html>
+
+Expected '</', got '{'
+[00:01:00.562] Browser ERROR   ./app/layout.tsx:42:10
+Parsing ecmascript source code failed
+  40 |       <body className={`font-sans antialiased`}>
+  41 |         <A
+> 42 |         {children}
+     |          ^^^^^^^^
+  43 |         <Analytics />
+  44 |       </body>
+  45 |     </html>
+
+Expected '</', got 'children'
+[00:01:01.560] Browser ERROR   ./app/layout.tsx:42:10
+Parsing ecmascript source code failed
+  40 |       <body className={`font-sans antialiased`}>
+  41 |         <Api
+> 42 |         {children}
+     |          ^^^^^^^^
+  43 |         <Analytics />
+  44 |       </body>
+  45 |     </html>
+
+Expected '</', got 'children'
+[00:01:05.075] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:05.557] Browser ERROR   uncaughtError: Error: useApi deve ser usado dentro de ApiProvider
+[00:01:06.170] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:06.565] Browser ERROR   uncaughtError: Error: useApi deve ser usado dentro de ApiProvider
+[00:02:51.883] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:51.885] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:51.888] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:51.891] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:51.894] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:51.898] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:51.901] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:51.905] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:51.912] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:51.919] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:51.922] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:51.927] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:52.556] Browser ERROR   ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:02:55.851] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/apiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/apiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/apiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:55.856] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/apiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/apiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/apiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:55.859] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/apiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/apiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/apiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:55.861] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/apiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/apiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/apiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:55.864] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/apiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/apiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/apiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:55.866] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/apiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/apiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/apiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:55.869] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/apiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/apiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/apiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:55.871] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/apiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/apiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/apiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:55.875] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/apiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/apiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/apiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:55.877] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/apiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/apiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/apiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:55.881] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/apiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/apiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/apiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:55.883] Server  ERROR    ⨯ ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/apiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/apiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/apiContext' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:02:56.558] Browser ERROR   ./app/layout.tsx:7:1
+Module not found: Can't resolve '@/contexts/apiContext'
+   5 | import { Analytics } from "@vercel/analytics/next";
+   6 | import "./globals.css";
+>  7 | import { ApiProvider } from "@/contexts/apiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | const _geist = Geist({ subsets: ["latin"] });
+  10 | const _geistMono = Geist_Mono({ subsets: ["latin"] });
+
+Import map: aliased to relative './contexts/apiContext' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[00:02:59.556] Browser ERROR   ./context/apiContext.tsx:2:17
+Ecmascript file had an error
+  1 | // src/contexts/ApiContext.tsx
+> 2 | import React, { createContext, useContext, useState, useCallback } from 'react';
+    |                 ^^^^^^^^^^^^^
+  3 | import api, { chatWithAI, login as apiLogin, register as apiRegister } from '../services/api';
+  4 | import { ChatMessageDTO, ChatApiResponse, LoginDTO, RegisterDTO } from '../types/index';
+  5 |
+
+You're importing a component that needs `createContext`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Server Component:
+    ./context/apiContext.tsx
+    ./app/layout.tsx
+
+  Client Component Browser:
+    ./context/apiContext.tsx [Client Component Browser]
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./context/apiContext.tsx [Client Component SSR]
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[00:02:59.556] Browser ERROR   ./context/apiContext.tsx:2:44
+Ecmascript file had an error
+  1 | // src/contexts/ApiContext.tsx
+> 2 | import React, { createContext, useContext, useState, useCallback } from 'react';
+    |                                            ^^^^^^^^
+  3 | import api, { chatWithAI, login as apiLogin, register as apiRegister } from '../services/api';
+  4 | import { ChatMessageDTO, ChatApiResponse, LoginDTO, RegisterDTO } from '../types/index';
+  5 |
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Server Component:
+    ./context/apiContext.tsx
+    ./app/layout.tsx
+
+  Client Component Browser:
+    ./context/apiContext.tsx [Client Component Browser]
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./context/apiContext.tsx [Client Component SSR]
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[00:04:13.904] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:04:14.137] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:14.454] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:04:14.454] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:04:14.454] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765222961591}
+[00:04:26.897] Browser ERROR   {"code":"ERR_NETWORK","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","data":"{\"name\":\"caio\",\"email\":\"caiolucasxz55@gmail.com\",\"password\":\"123456\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/api/auth/register","withCredentials":true,"xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Network Error","name":"AxiosError","stack":"AxiosError: Network Error\n    at XMLHttpRequest.handleError (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:4504:25)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:5262:49)\n    at async register (http://localhost:3001/_next/static/chunks/_13f94a7a._.js:37:22)\n    at async ApiProvider.useCallback[register] (http://localhost:3001/_next/static/chunks/_13f94a7a._.js:103:26)\n    at async handleSubmit (http://localhost:3001/_next/static/chunks/_f9e52487._.js:293:30)"}
+[00:05:17.676] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:17.913] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:05:17.913] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:05:17.913] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765223025058}
+[00:05:28.458] Browser ERROR   {"code":"ERR_NETWORK","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","data":"{\"name\":\"caio\",\"email\":\"caiolucasxz55@gmail.com\",\"password\":\"123456\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/api/auth/register","withCredentials":true,"xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Network Error","name":"AxiosError","stack":"AxiosError: Network Error\n    at XMLHttpRequest.handleError (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:4504:25)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:5262:49)\n    at async register (http://localhost:3001/_next/static/chunks/_13f94a7a._.js:37:22)\n    at async ApiProvider.useCallback[register] (http://localhost:3001/_next/static/chunks/_13f94a7a._.js:103:26)\n    at async handleSubmit (http://localhost:3001/_next/static/chunks/_f9e52487._.js:293:30)"}
+[00:07:30.273] Browser ERROR   {"code":"ERR_NETWORK","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","data":"{\"name\":\"caio\",\"email\":\"caiolucasxz55@gmail.com\",\"password\":\"123456\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/api/auth/register","withCredentials":true,"xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Network Error","name":"AxiosError","stack":"AxiosError: Network Error\n    at XMLHttpRequest.handleError (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:4504:25)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:5262:49)\n    at async register (http://localhost:3001/_next/static/chunks/_13f94a7a._.js:37:22)\n    at async ApiProvider.useCallback[register] (http://localhost:3001/_next/static/chunks/_13f94a7a._.js:103:26)\n    at async handleSubmit (http://localhost:3001/_next/static/chunks/_f9e52487._.js:293:30)"}
+[00:13:03.826] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/home color: rgb(120, 120, 120) color: inherit {"dp":"/home","o":"http://localhost:3001/home","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765223490866}
+[00:13:03.826] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765223490959}
+[00:13:10.742] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/home color: rgb(120, 120, 120) color: inherit {"dp":"/home","o":"http://localhost:3001/home","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765223497817}
+[00:13:10.742] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765223497880}
+[00:16:44.984] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/home color: rgb(120, 120, 120) color: inherit {"dp":"/home","o":"http://localhost:3001/home","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765223712046}
+[00:16:44.984] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765223712122}
+[00:22:16.716] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./services/api.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:22:16.732] Server  LOG      ✓ Compiled in 391ms
+[00:22:17.280] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:17.557] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:22:17.557] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:22:17.557] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765224044679}
+[00:22:24.314] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/home color: rgb(120, 120, 120) color: inherit {"dp":"/home","o":"http://localhost:3001/home","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765224051348}
+[00:22:24.314] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765224051445}
+[00:24:03.714] Server  LOG      ✓ Compiled in 697ms
+[00:24:04.108] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:04.563] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:24:04.563] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:24:04.563] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765224151462}
+[00:24:40.537] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.542] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.545] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.551] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.557] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.561] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.565] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.569] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.573] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.577] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.580] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.584] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.588] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.591] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.593] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.596] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.599] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.602] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.605] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.607] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.612] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.614] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.617] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.619] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.622] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.625] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.628] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.631] Server  ERROR    ⨯ ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:24:40.632] Server  LOG      ✓ Compiled in 147ms
+[00:24:41.556] Browser ERROR   ./components/auth-form.tsx:9:1
+Module not found: Can't resolve '@/contexts/ApiContext'
+   7 | import { Input } from "@/components/ui/input";
+   8 | import { Card } from "@/components/ui/card";
+>  9 | import { useApi } from "@/contexts/ApiContext";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  10 | import type { RegisterDTO, LoginDTO } from "@/types/index";
+  11 |
+  12 | export default function AuthForm() {
+
+Import map: aliased to relative './contexts/ApiContext' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./components/auth-form.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/auth-form.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:25:00.780] Server  ERROR   C:\Users\Acer\Desktop\Vant\front-teste\.next\dev\server\chunks\ssr\node_modules_next_dist_3b4d20e1._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:25:00.807] Server  ERROR   C:\Users\Acer\Desktop\Vant\front-teste\.next\dev\server\chunks\ssr\node_modules_b0df6f6d._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:25:00.810] Server  WARN    Error: Route "/home" used `...params` or similar expression. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:25:00.891] Server  ERROR   C:\Users\Acer\Desktop\Vant\front-teste\.next\dev\server\chunks\ssr\node_modules_b0df6f6d._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:25:00.896] Server  ERROR    ⨯ AxiosError: Request failed with status code 404
+[00:25:01.031] Browser ERROR   uncaughtError: AxiosError: Request failed with status code 404
+[00:27:28.208] Server  LOG      ✓ Compiled in 59ms
+[00:27:28.552] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:29.567] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:27:29.567] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/home","route":"/home"}
+[00:27:29.567] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/home color: rgb(120, 120, 120) color: inherit {"dp":"/home","o":"http://localhost:3001/home","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765224355911}
+[00:27:29.567] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765224355915}
+[00:27:37.481] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/home color: rgb(120, 120, 120) color: inherit {"dp":"/home","o":"http://localhost:3001/home","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765224364578}
+[00:27:37.481] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765224364625}
+[00:29:40.747] Server  LOG      ✓ Compiled in 56ms
+[00:29:46.886] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/home color: rgb(120, 120, 120) color: inherit {"dp":"/home","o":"http://localhost:3001/home","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765224494005}
+[00:30:11.447] Browser ERROR   {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","data":"{\"message\":\"Olá gpt, pode me explicar qual o seu papel pelas suas configurações? faça um resumo simples, e tb me fale se vc salva informaçoes de fornecedores e produtos para determinado evento\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/api/ai/chat","withCredentials":true,"xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:3943:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:4458:174)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:5262:49)\n    at async chatWithAI (http://localhost:3001/_next/static/chunks/_13f94a7a._.js:46:22)\n    at async ApiProvider.useCallback[chat] (http://localhost:3001/_next/static/chunks/_13f94a7a._.js:114:26)\n    at async handleSendMessage (http://localhost:3001/_next/static/chunks/_1aa8941f._.js:305:26)","status":401}
+[00:35:04.107] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./context/apiContext.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:35:04.135] Server  LOG      ✓ Compiled in 196ms
+[00:35:05.097] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:35:05.553] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:35:05.553] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/home","route":"/home"}
+[00:35:05.553] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/home color: rgb(120, 120, 120) color: inherit {"dp":"/home","o":"http://localhost:3001/home","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765224812471}
+[00:35:18.894] Browser ERROR   {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","data":"{\"message\":\"Olá gpt, pode me explicar qual o seu papel pelas suas configurações? faça um resumo simples, e tb me fale se vc salva informaçoes de fornecedores e produtos para determinado evento\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/api/ai/chat","withCredentials":true,"xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:3943:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:4458:174)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:5262:49)\n    at async chatWithAI (http://localhost:3001/_next/static/chunks/_13f94a7a._.js:46:22)\n    at async ApiProvider.useCallback[chat] (http://localhost:3001/_next/static/chunks/_13f94a7a._.js:119:26)\n    at async handleSendMessage (http://localhost:3001/_next/static/chunks/_1aa8941f._.js:305:26)","status":401}
+[00:37:28.548] Browser ERROR   {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"baseURL":"http://localhost:3000","data":"{\"message\":\"Olá gpt, pode me explicar qual o seu papel pelas suas configurações? faça um resumo simples, e tb me fale se vc salva informaçoes de fornecedores e produtos para determinado evento\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/api/ai/chat","withCredentials":true,"xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:3943:16)\n    at XMLHttpRequest.onloadend (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:4458:174)\n    at Axios.request (http://localhost:3001/_next/static/chunks/node_modules_d14da46b._.js:5262:49)\n    at async chatWithAI (http://localhost:3001/_next/static/chunks/_13f94a7a._.js:46:22)\n    at async ApiProvider.useCallback[chat] (http://localhost:3001/_next/static/chunks/_13f94a7a._.js:119:26)\n    at async handleSendMessage (http://localhost:3001/_next/static/chunks/_1aa8941f._.js:305:26)","status":401}
+[00:38:55.084] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765225042229}
+[00:39:00.650] Browser LOG     LOGIN RESPONSE FRONT: {"data":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzMTEwNjUxYi1kMGRmLTRlYjktYjg3OS1kZTE3MDkwNjlmMDciLCJpYXQiOjE3NjUyMjUwNDcsImV4cCI6MTc2NTgyOTg0N30.GOwN2aobrtM-6TR217ADFsD-18521p30YnPXshksrvE","user":{"createdAt":"2025-12-08T19:51:28.001Z","email":"caiolucasxz55@gmail.com","id":"3110651b-d0df-4eb9-b879-de1709069f07","name":"caio","phone":null,"updatedAt":"2025-12-08T19:51:28.001Z"}},"message":"Login realizado com sucesso","success":true}
+[00:39:00.650] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/home color: rgb(120, 120, 120) color: inherit {"dp":"/home","o":"http://localhost:3001/home","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765225047782}
+[00:40:16.331] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./context/apiContext.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:40:16.749] Server  LOG      ✓ Compiled in 523ms
+[00:40:17.102] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:17.569] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:40:17.569] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/home","route":"/home"}
+[00:40:17.569] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/home color: rgb(120, 120, 120) color: inherit {"dp":"/home","o":"http://localhost:3001/home","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765225124551}
+[00:49:52.480] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/workspace color: rgb(120, 120, 120) color: inherit {"dp":"/workspace","o":"http://localhost:3001/workspace","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765225699623}
+[00:49:55.823] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/home color: rgb(120, 120, 120) color: inherit {"dp":"/home","o":"http://localhost:3001/home","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765225702953}
