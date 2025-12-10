@@ -1,7 +1,7 @@
 // src/contexts/ApiContext.tsx
 "use client";
 
-import { createContext, useContext, useState, useCallback } from "react";
+import { createContext, useContext, useState, useCallback, useEffect } from "react";
 import api, {
   chatWithAI,
   login as apiLogin,
@@ -26,11 +26,20 @@ interface ApiContextValue {
 const ApiContext = createContext<ApiContextValue | undefined>(undefined);
 
 export function ApiProvider({ children }: { children: React.ReactNode }) {
-  const [token, setTokenState] = useState<string | null>(() => {
-    if (typeof window === "undefined") return null;
-    return localStorage.getItem("token");
-  });
+  const [token, setTokenState] = useState<string | null>(null);
 
+  // Carrega token salvo no localStorage ao iniciar
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("token");
+      if (stored) {
+        setTokenState(stored);
+        api.defaults.headers.common.Authorization = `Bearer ${stored}`;
+      }
+    }
+  }, []);
+
+  // Define token corretamente e joga no axios
   const setToken = useCallback((t: string | null) => {
     setTokenState(t);
 
@@ -45,56 +54,44 @@ export function ApiProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  /* --------------------------------------------------
-     LOGIN
-  -------------------------------------------------- */
+  // LOGIN
   const login = useCallback(
     async (payload: LoginDTO) => {
-      const data = await apiLogin(payload);
+      const res = await apiLogin(payload);
 
-      // Backend geralmente retorna: { success: true, token: "..." }
       const token =
-        data.token ||
-        data.accessToken ||
-        data?.data?.token ||
-        data?.data?.accessToken;
+        res?.token ||
+        res?.accessToken ||
+        res?.data?.token ||
+        res?.data?.accessToken;
 
-      if (!token) {
-        console.warn(
-          "Nenhum token encontrado na resposta do login. Ajuste o caminho conforme o seu backend."
-        );
-      } else {
+      if (token) {
         setToken(token);
       }
 
-      return data;
+      return res;
     },
     [setToken]
   );
 
-  /* --------------------------------------------------
-     REGISTER
-  -------------------------------------------------- */
+  // REGISTER
   const register = useCallback(async (payload: RegisterDTO) => {
     return await apiRegister(payload);
   }, []);
 
+  // CHAT
   const chat = useCallback(async (payload: ChatMessageDTO) => {
     const res = await chatWithAI(payload);
-
-    // res = { success: true, data: {...} }
     return res as ChatApiResponse;
   }, []);
 
-  const value: ApiContextValue = {
-    token,
-    setToken,
-    chat,
-    login,
-    register,
-  };
-
-  return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;
+  return (
+    <ApiContext.Provider
+      value={{ token, setToken, chat, login, register }}
+    >
+      {children}
+    </ApiContext.Provider>
+  );
 }
 
 export const useApi = (): ApiContextValue => {
