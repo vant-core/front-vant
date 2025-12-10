@@ -12,9 +12,19 @@ import {
   WorkspaceStats
 } from '../types/index';
 
+const isLocalhost =
+  typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' ||
+   window.location.hostname === '127.0.0.1');
+
+// Backend local em dev, Render em prod
+const apiBaseURL = isLocalhost
+  ? 'http://localhost:3000'
+  : 'https://back-end-ypsc.onrender.com';
+
 const api = axios.create({
-  baseURL: 'http://localhost:3000',
-  withCredentials: true
+  baseURL: apiBaseURL,
+  withCredentials: true,
 });
 
 api.interceptors.request.use(config => {
