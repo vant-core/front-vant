@@ -14,8 +14,9 @@ import {
   ChevronDown,
   ChevronUp
 } from "lucide-react"
+
 import { getFolder, deleteItem } from "@/services/api"
-import type { Folder, FolderItem } from "@/types"
+import type { FolderItem, FolderWithCount } from "@/types"
 import { useRouter, useParams } from "next/navigation"
 
 export default function FolderDetailPage() {
@@ -23,7 +24,7 @@ export default function FolderDetailPage() {
   const params = useParams()
   const folderId = params.id as string
 
-  const [folder, setFolder] = useState<Folder | null>(null)
+  const [folder, setFolder] = useState<FolderWithCount | null>(null)
   const [items, setItems] = useState<FolderItem[]>([])
   const [filteredItems, setFilteredItems] = useState<FolderItem[]>([])
   const [searchTerm, setSearchTerm] = useState("")
@@ -31,14 +32,23 @@ export default function FolderDetailPage() {
   const [deletingId, setDeletingId] = useState<string | null>(null)
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set())
 
-  // 🔥 Carrega pasta e items
+  /* -------------------------------------------------------
+     LOAD FOLDER + ITEMS
+  ------------------------------------------------------- */
   const loadFolderData = async () => {
     try {
       setIsLoading(true)
       const data = await getFolder(folderId)
-      setFolder(data)
-      // @ts-ignore - items vem do backend
-      const itemsList = data.items || []
+
+      const itemsList = (data as any).items || []
+
+      const folderWithCount: FolderWithCount = {
+        ...data,
+        itemCount: itemsList.length,
+        subFolders: (data as any).subFolders
+      }
+
+      setFolder(folderWithCount)
       setItems(itemsList)
       setFilteredItems(itemsList)
     } catch (error) {
@@ -54,7 +64,9 @@ export default function FolderDetailPage() {
     loadFolderData()
   }, [folderId])
 
-  // 🔥 Filtrar items por busca
+  /* -------------------------------------------------------
+     SEARCH FILTER
+  ------------------------------------------------------- */
   useEffect(() => {
     if (!searchTerm.trim()) {
       setFilteredItems(items)
@@ -72,25 +84,28 @@ export default function FolderDetailPage() {
     setFilteredItems(filtered)
   }, [searchTerm, items])
 
-  // 🔥 Toggle expandir item
+  /* -------------------------------------------------------
+     EXPAND ITEM CONTENT
+  ------------------------------------------------------- */
   const toggleExpand = (itemId: string) => {
     const newExpanded = new Set(expandedItems)
-    if (newExpanded.has(itemId)) {
-      newExpanded.delete(itemId)
-    } else {
-      newExpanded.add(itemId)
-    }
+    newExpanded.has(itemId)
+      ? newExpanded.delete(itemId)
+      : newExpanded.add(itemId)
+
     setExpandedItems(newExpanded)
   }
 
-  // 🔥 Deletar item
+  /* -------------------------------------------------------
+     DELETE ITEM
+  ------------------------------------------------------- */
   const handleDeleteItem = async (id: string, title: string) => {
     if (!confirm(`Deletar "${title}"?`)) return
 
     try {
       setDeletingId(id)
       await deleteItem(id)
-      const newItems = items.filter((item) => item.id !== id)
+      const newItems = items.filter((i) => i.id !== id)
       setItems(newItems)
       setFilteredItems(newItems)
       alert("✅ Item deletado!")
@@ -112,10 +127,13 @@ export default function FolderDetailPage() {
 
   if (!folder) return null
 
+  /* -------------------------------------------------------
+     RENDER PAGE
+  ------------------------------------------------------- */
   return (
     <div className="container mx-auto py-8 space-y-6">
-      
-      {/* Header com volta */}
+
+      {/* VOLTAR */}
       <div className="flex items-center gap-4">
         <Button
           variant="ghost"
@@ -128,26 +146,63 @@ export default function FolderDetailPage() {
         </Button>
       </div>
 
-      {/* Título da Pasta */}
+      {/* CARD PRINCIPAL DA PASTA */}
       <Card className="p-6" style={{ borderLeft: `6px solid ${folder.color}` }}>
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-4">
             <span className="text-6xl">{folder.icon}</span>
+
             <div>
               <h1 className="text-4xl font-bold text-foreground">{folder.name}</h1>
+
               {folder.description && (
                 <p className="text-muted-foreground mt-2 text-lg">{folder.description}</p>
               )}
+
               <div className="flex items-center gap-4 mt-3 text-sm text-muted-foreground">
-                <span>📦 {items.length} item{items.length !== 1 && 's'}</span>
-                <span>📅 Criada em {new Date(folder.createdAt).toLocaleDateString('pt-BR')}</span>
+                <span>📦 {items.length} item{items.length !== 1 && "s"}</span>
+                <span>
+                  📅 Criada em {" "}
+                  {new Date(folder.createdAt).toLocaleDateString("pt-BR")}
+                </span>
               </div>
             </div>
           </div>
         </div>
+
+        {/* -------------------------------------------- */}
+        {/* SUBPASTAS COMO CARDS */}
+        {/* -------------------------------------------- */}
+        {folder.subFolders && folder.subFolders.length > 0 && (
+          <div className="mt-6 pt-4 border-t border-border">
+            <p className="text-sm text-muted-foreground mb-3 font-medium flex items-center gap-2">
+              📁 Subpastas
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {folder.subFolders.map((sub) => (
+                <Card
+                  key={sub.id}
+                  onClick={() => router.push(`/workspace/folders/${sub.id}`)}
+                  className="cursor-pointer p-4 flex items-center gap-4 rounded-xl hover:shadow-md transition border-l-4"
+                  style={{ borderColor: sub.color || folder.color }}
+                >
+                  <div className="text-3xl">{sub.icon}</div>
+
+                  <div className="flex flex-col">
+                    <span className="font-semibold text-lg">{sub.name}</span>
+                    <span className="text-xs text-muted-foreground">
+                      Clique para abrir
+                    </span>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        )}
       </Card>
 
-      {/* Barra de Busca */}
+      {/* CAMPO DE BUSCA */}
       <Card className="p-4">
         <div className="flex items-center gap-2">
           <Search className="w-5 h-5 text-muted-foreground" />
@@ -159,53 +214,45 @@ export default function FolderDetailPage() {
             className="flex-1 border-none shadow-none focus-visible:ring-0"
           />
           {searchTerm && (
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setSearchTerm("")}
-            >
+            <Button variant="ghost" size="sm" onClick={() => setSearchTerm("")}>
               Limpar
             </Button>
           )}
         </div>
       </Card>
 
-      {/* Lista de Items */}
+      {/* LISTA DE ITEMS */}
       {filteredItems.length === 0 ? (
         <Card className="p-12 text-center border-dashed">
           <p className="text-muted-foreground text-lg">
-            {searchTerm 
+            {searchTerm
               ? `Nenhum item encontrado para "${searchTerm}"`
-              : "Nenhum item nesta pasta ainda. Use o chat para adicionar dados!"
-            }
+              : "Nenhum item nesta pasta ainda. Use o chat para adicionar dados!"}
           </p>
         </Card>
       ) : (
         <div className="space-y-4">
           {filteredItems.map((item) => {
             const isExpanded = expandedItems.has(item.id)
-            
+
             return (
-              <Card 
-                key={item.id}
-                className="p-6 hover:shadow-lg transition-all"
-              >
+              <Card key={item.id} className="p-6 hover:shadow-lg transition-all">
                 <div className="space-y-4">
-                  
-                  {/* Header do Item */}
+
+                  {/* HEADER DO ITEM */}
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h3 className="font-bold text-2xl text-foreground mb-2">
-                        {item.title}
-                      </h3>
+                      <h3 className="font-bold text-2xl text-foreground mb-2">{item.title}</h3>
+
                       <div className="flex flex-wrap gap-2">
                         {item.itemType && (
                           <span className="inline-flex items-center text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">
                             {item.itemType}
                           </span>
                         )}
-                        {item.tags && item.tags.map((tag, idx) => (
-                          <span 
+
+                        {item.tags.map((tag, idx) => (
+                          <span
                             key={idx}
                             className="inline-flex items-center text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground gap-1"
                           >
@@ -215,6 +262,7 @@ export default function FolderDetailPage() {
                         ))}
                       </div>
                     </div>
+
                     <Button
                       variant="ghost"
                       size="sm"
@@ -230,25 +278,25 @@ export default function FolderDetailPage() {
                     </Button>
                   </div>
 
-                  {/* Dados do Item (Preview) */}
+                  {/* CONTEÚDO DO ITEM */}
                   <div className="bg-muted/50 rounded-lg p-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {Object.entries(item.content).slice(0, isExpanded ? undefined : 4).map(([key, value]) => (
-                        <div key={key} className="flex flex-col gap-1">
-                          <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-                            {key}
-                          </span>
-                          <span className="text-base text-foreground font-medium">
-                            {typeof value === 'object' 
-                              ? JSON.stringify(value, null, 2)
-                              : String(value)
-                            }
-                          </span>
-                        </div>
-                      ))}
+                      {Object.entries(item.content)
+                        .slice(0, isExpanded ? undefined : 4)
+                        .map(([key, value]) => (
+                          <div key={key} className="flex flex-col gap-1">
+                            <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
+                              {key}
+                            </span>
+                            <span className="text-base text-foreground font-medium">
+                              {typeof value === "object"
+                                ? JSON.stringify(value, null, 2)
+                                : String(value)}
+                            </span>
+                          </div>
+                        ))}
                     </div>
 
-                    {/* Botão Expandir/Recolher */}
                     {Object.keys(item.content).length > 4 && (
                       <Button
                         variant="ghost"
@@ -271,19 +319,21 @@ export default function FolderDetailPage() {
                     )}
                   </div>
 
-                  {/* Footer - Data de criação */}
+                  {/* FOOTER */}
                   <div className="flex items-center justify-between pt-3 border-t border-border">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Calendar className="w-4 h-4" />
-                      Criado em {new Date(item.createdAt).toLocaleString('pt-BR', {
-                        day: '2-digit',
-                        month: '2-digit',
-                        year: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit'
+                      Criado em{" "}
+                      {new Date(item.createdAt).toLocaleString("pt-BR", {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit"
                       })}
                     </div>
                   </div>
+
                 </div>
               </Card>
             )
@@ -291,7 +341,7 @@ export default function FolderDetailPage() {
         </div>
       )}
 
-      {/* Botão de Atualizar */}
+      {/* BOTÃO ATUALIZAR */}
       <div className="flex justify-center pt-4">
         <Button
           variant="outline"

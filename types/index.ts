@@ -1,5 +1,3 @@
-// src/types/api.ts
-
 /* -------------------------------------------------------
    USER / AUTH
 ------------------------------------------------------- */
@@ -69,16 +67,23 @@ export interface FileInfo {
   downloadUrl?: string;
 }
 
-/**
- * 🔥 Dados de ação do workspace
- */
+/* -------------------------------------------------------
+   🔥 WORKSPACE ACTION (IA → FRONT)
+------------------------------------------------------- */
+
+export type WorkspaceActionType =
+  | "folder_created"
+  | "folder_path_created"
+  | "subfolder_created"
+  | "item_added"
+  | "item_added_to_path"
+  | "item_added_to_folderpath"
+  | "folders_listed"
+  | "items_searched"
+  | "folder_deleted";
+
 export interface WorkspaceAction {
-  action: 
-    | "folder_created" 
-    | "item_added" 
-    | "folders_listed" 
-    | "items_searched" 
-    | "folder_deleted";
+  action: WorkspaceActionType;
   folder?: Folder;
   item?: FolderItem;
   folders?: FolderWithCount[];
@@ -86,23 +91,101 @@ export interface WorkspaceAction {
   count?: number;
 }
 
+/* -------------------------------------------------------
+   📊 REPORT DATA (NOVO)
+------------------------------------------------------- */
+
 /**
- * Resposta do backend em /api/ai/chat
+ * Dados de um relatório gerado pela IA
  */
+export interface ReportData {
+  html: string;
+  data: {
+    title: string;
+    subtitle?: string;
+    generatedAt: string;
+    sections: ReportSection[];
+    metadata?: {
+      userId?: string;
+      folderId?: string;
+      totalItems?: number;
+      dateRange?: {
+        start: string;
+        end: string;
+      };
+    };
+  };
+}
+
+/**
+ * Seção do relatório
+ */
+export interface ReportSection {
+  id?: string;
+  title: string;
+  type: 'text' | 'table' | 'cards' | 'list' | 'chart';
+  content: any;
+  description?: string;
+}
+
+/**
+ * Card de resumo
+ */
+export interface ReportCard {
+  label: string;
+  value: string | number;
+  icon?: string;
+  description?: string;
+}
+
+/**
+ * Conteúdo de tabela
+ */
+export interface ReportTableContent {
+  headers: string[];
+  rows: (string | number)[][];
+}
+
+/**
+ * Item de lista
+ */
+export interface ReportListItem {
+  title: string;
+  description?: string;
+  tags?: string[];
+  metadata?: Record<string, any>;
+}
+
+/**
+ * Configuração visual do relatório
+ */
+export interface ReportConfig {
+  primaryColor?: string;
+  secondaryColor?: string;
+  accentColor?: string;
+  fontFamily?: string;
+  logo?: string;
+}
+
+/* -------------------------------------------------------
+   CHATApiResponse (ATUALIZADO COM REPORT)
+------------------------------------------------------- */
+
 export interface ChatApiResponse {
   success: boolean;
   data: {
     conversationId: string;
     message: string;
     file?: FileInfo;
-    workspace?: WorkspaceAction; // 🔥 NOVO
+    workspace?: WorkspaceAction;
+    report?: ReportData; // 🔥 NOVO: dados do relatório
     usage?: OpenAIUsage;
     _links?: Record<string, any>;
   };
 }
 
 /* -------------------------------------------------------
-   EVENT DATA / REGISTRATION
+   EVENT REGISTRATION
 ------------------------------------------------------- */
 
 export interface ExtractedEventData {
@@ -129,6 +212,8 @@ export interface EventRegistrationDTO {
 /* -------------------------------------------------------
    🔥 WORKSPACE TYPES
 ------------------------------------------------------- */
+
+export type FolderPath = string[]; // Ex: ["Eventos", "Coca-Cola", "Financeiro"]
 
 export interface Folder {
   id: string;
@@ -177,4 +262,107 @@ export interface WorkspaceStats {
     type: string;
     count: number;
   }>;
+}
+
+/* -------------------------------------------------------
+   🔥 DTOS DO NOVO SISTEMA DE PASTAS PROFUNDAS
+------------------------------------------------------- */
+
+/**
+ * Criar uma estrutura completa via path string
+ * Ex: "Eventos/Coca-Cola/Financeiro"
+ */
+export interface CreateFolderPathDTO {
+  path: string; // caminho único
+  icon?: string;
+  color?: string;
+}
+
+/**
+ * Criar subpasta via array
+ * Ex: ["Eventos", "Coca-Cola"] + name: "Financeiro"
+ */
+export interface CreateSubfolderDTO {
+  folderPath: FolderPath;
+  name: string;
+  icon?: string;
+  color?: string;
+}
+
+/**
+ * Adicionar item usando folderPath array
+ */
+export interface AddItemToFolderPathDTO {
+  folderPath: FolderPath;
+  title: string;
+  content: Record<string, any>;
+  itemType?: string;
+  tags?: string[];
+}
+
+/**
+ * Adicionar item usando path string
+ * Ex: "Eventos/Coca-Cola/Financeiro"
+ */
+export interface AddItemToPathDTO {
+  path: string;
+  title: string;
+  content: Record<string, any>;
+  itemType?: string;
+  tags?: string[];
+}
+
+/**
+ * Busca por itens profundos
+ */
+export interface SearchItemsDTO {
+  query?: string;
+  folderPath?: FolderPath;
+  tags?: string[];
+}
+
+/* -------------------------------------------------------
+   📊 REPORT DTOs (NOVO)
+------------------------------------------------------- */
+
+/**
+ * DTO para gerar relatório
+ * Usado tanto para preview quanto para PDF
+ */
+export interface GenerateReportDTO {
+  userId?: string; // Opcional no frontend (backend pega do token)
+  folderId?: string; // Se quiser filtrar por pasta específica
+  title?: string; // Título customizado
+  subtitle?: string;
+  config?: ReportConfig; // Configurações visuais
+  filters?: {
+    dateFrom?: string;
+    dateTo?: string;
+    tags?: string[];
+    itemTypes?: string[];
+  };
+}
+
+/**
+ * Resposta do preview do relatório
+ */
+export interface ReportPreviewResponse {
+  success: boolean;
+  html: string;
+  data: {
+    title: string;
+    subtitle?: string;
+    generatedAt: string;
+    sections: ReportSection[];
+    metadata?: any;
+  };
+  config?: ReportConfig;
+}
+
+/**
+ * DTO para gerar PDF a partir de HTML customizado
+ */
+export interface GenerateReportFromHTMLDTO {
+  html: string;
+  filename?: string;
 }
