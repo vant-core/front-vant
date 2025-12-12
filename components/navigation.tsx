@@ -40,6 +40,15 @@ export default function Navigation() {
             >
               Workspace
             </Link>
+
+            <Link
+              href="/reports"
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive("/reports") ? "bg-muted text-foreground" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Relatórios
+            </Link>
           </div>
         </div>
 

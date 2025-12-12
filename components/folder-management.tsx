@@ -3,26 +3,48 @@
 import type React from "react"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
 import { Trash2, FolderOpen, ChevronRight, Loader2 } from "lucide-react"
-import { getFolders, deleteFolder, getItems } from "@/services/api"
-import type { FolderWithCount, FolderItem } from "@/types"
+import { getFolders, deleteFolder } from "@/services/api"
+import type { FolderWithCount } from "@/types"
 import { useRouter } from "next/navigation"
 
 export default function FolderManagement() {
   const router = useRouter()
-  
+
   const [folders, setFolders] = useState<FolderWithCount[]>([])
+  const [rootFolders, setRootFolders] = useState<FolderWithCount[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [deletingId, setDeletingId] = useState<string | null>(null)
 
-  // 🔥 Carrega pastas do backend
+  /* -------------------------------------------------------
+     LOAD FOLDERS + BUILD HIERARCHY
+  ------------------------------------------------------- */
   const loadFolders = async () => {
     try {
       setIsLoading(true)
+
       const data = await getFolders()
+
+      // 🔥 Criar um mapa pra organizar pastas por parentId
+      const map = new Map<string, FolderWithCount[]>()
+
+      data.forEach((folder) => {
+        const parent = folder.parentId ?? "root"
+        if (!map.has(parent)) map.set(parent, [])
+        map.get(parent)!.push(folder)
+      })
+
+      // 🔥 Pastas raiz = sem parentId
+      const roots = map.get("root") ?? []
+
+      // 🔥 Adicionar subpastas no objeto correto
+      roots.forEach((folder) => {
+        folder.subFolders = map.get(folder.id) ?? []
+      })
+
       setFolders(data)
+      setRootFolders(roots)
     } catch (error) {
       console.error("❌ Erro ao carregar pastas:", error)
     } finally {
@@ -34,7 +56,9 @@ export default function FolderManagement() {
     loadFolders()
   }, [])
 
-  // 🔥 Deletar pasta
+  /* -------------------------------------------------------
+     DELETE FOLDER
+  ------------------------------------------------------- */
   const handleDeleteFolder = async (id: string, name: string) => {
     if (!confirm(`Tem certeza que deseja deletar a pasta "${name}"? Todos os items serão removidos.`)) {
       return
@@ -43,7 +67,9 @@ export default function FolderManagement() {
     try {
       setDeletingId(id)
       await deleteFolder(id)
-      setFolders(folders.filter((f) => f.id !== id))
+
+      // Atualiza o front-end
+      setRootFolders(rootFolders.filter((f) => f.id !== id))
       alert("✅ Pasta deletada com sucesso!")
     } catch (error) {
       console.error("❌ Erro ao deletar pasta:", error)
@@ -53,11 +79,13 @@ export default function FolderManagement() {
     }
   }
 
-  // 🔥 Abrir pasta (navegar para página de items)
   const handleOpenFolder = (folderId: string) => {
     router.push(`/workspace/folders/${folderId}`)
   }
 
+  /* -------------------------------------------------------
+     RENDER
+  ------------------------------------------------------- */
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
@@ -75,25 +103,22 @@ export default function FolderManagement() {
             Organize seus dados em pastas criadas automaticamente pela IA
           </p>
         </div>
-        <Button
-          onClick={loadFolders}
-          variant="outline"
-          className="flex items-center gap-2"
-        >
+        <Button onClick={loadFolders} variant="outline" className="flex items-center gap-2">
           Atualizar
         </Button>
       </div>
 
-      {/* 🔥 INFO: IA cria pastas automaticamente */}
       <Card className="p-4 bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800">
         <p className="text-sm text-blue-900 dark:text-blue-100">
           💡 <strong>Dica:</strong> As pastas são criadas automaticamente quando você conversa com a IA.
-          Experimente: "Registrei uma compra de 100 cadeiras" ou "Tenho uma reunião amanhã às 14h"
+          Experimente: "Crie uma pasta Eventos/Coca-Cola/Financeiro".
         </p>
       </Card>
 
-      {/* Folders Grid */}
-      {folders.length === 0 ? (
+      {/* -------------------------------------------------------
+         ROOT FOLDERS GRID (CORRETO AGORA)
+      ------------------------------------------------------- */}
+      {rootFolders.length === 0 ? (
         <Card className="p-12 text-center border-dashed">
           <div className="space-y-3">
             <p className="text-muted-foreground">Nenhuma pasta ainda.</p>
@@ -104,23 +129,22 @@ export default function FolderManagement() {
         </Card>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {folders.map((folder) => (
-            <Card 
-              key={folder.id} 
+
+          {rootFolders.map((folder) => (
+            <Card
+              key={folder.id}
               className="p-5 hover:shadow-lg transition-all cursor-pointer group relative overflow-hidden"
               style={{ borderLeft: `4px solid ${folder.color}` }}
             >
-              {/* Background icon decorativo */}
-              <div 
-                className="absolute -right-4 -bottom-4 text-8xl opacity-5 pointer-events-none"
-              >
+              <div className="absolute -right-4 -bottom-4 text-8xl opacity-5 pointer-events-none">
                 {folder.icon}
               </div>
 
               <div className="space-y-4 relative z-10">
-                {/* Header da pasta */}
+
+                {/* HEADER */}
                 <div className="flex items-start justify-between">
-                  <div 
+                  <div
                     className="flex-1 cursor-pointer"
                     onClick={() => handleOpenFolder(folder.id)}
                   >
@@ -130,26 +154,22 @@ export default function FolderManagement() {
                         {folder.name}
                       </h3>
                     </div>
-                    {folder.description && (
-                      <p className="text-sm text-muted-foreground line-clamp-2 mt-2">
-                        {folder.description}
-                      </p>
-                    )}
                   </div>
                 </div>
 
-                {/* Info da pasta */}
+                {/* INFO */}
                 <div className="flex items-center justify-between pt-3 border-t border-border">
                   <div className="text-sm text-muted-foreground">
-                    <span className="font-semibold text-foreground">{folder.itemCount}</span> item
-                    {folder.itemCount !== 1 && 's'}
+                    <span className="font-semibold text-foreground">{folder.itemCount}</span>{" "}
+                    item{folder.itemCount !== 1 && "s"}
                   </div>
+
                   <div className="text-xs text-muted-foreground">
-                    {new Date(folder.createdAt).toLocaleDateString('pt-BR')}
+                    {new Date(folder.createdAt).toLocaleDateString("pt-BR")}
                   </div>
                 </div>
 
-                {/* Ações */}
+                {/* ACTION BUTTONS */}
                 <div className="flex gap-2">
                   <Button
                     size="sm"
@@ -160,6 +180,7 @@ export default function FolderManagement() {
                     Abrir
                     <ChevronRight className="w-4 h-4" />
                   </Button>
+
                   <Button
                     size="sm"
                     variant="outline"
@@ -175,13 +196,14 @@ export default function FolderManagement() {
                   </Button>
                 </div>
 
-                {/* Subpastas (se existir) */}
+                {/* SUBPASTAS (AGORA CORRETO) */}
                 {folder.subFolders && folder.subFolders.length > 0 && (
                   <div className="pt-2 border-t border-border">
                     <p className="text-xs text-muted-foreground mb-2">Subpastas:</p>
+
                     <div className="flex flex-wrap gap-2">
                       {folder.subFolders.map((sub) => (
-                        <span 
+                        <span
                           key={sub.id}
                           className="text-xs px-2 py-1 bg-secondary rounded-full flex items-center gap-1"
                         >
@@ -191,9 +213,11 @@ export default function FolderManagement() {
                     </div>
                   </div>
                 )}
+
               </div>
             </Card>
           ))}
+
         </div>
       )}
     </div>
