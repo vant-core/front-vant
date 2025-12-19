@@ -56,6 +56,25 @@ export default function FolderManagement() {
     loadFolders()
   }, [])
 
+  // 🔥 FIX 1: Auto-refresh quando a página ganha foco
+  useEffect(() => {
+    const handleFocus = () => {
+      loadFolders()
+    }
+
+    window.addEventListener('focus', handleFocus)
+    return () => window.removeEventListener('focus', handleFocus)
+  }, [])
+
+  // 🔥 FIX 1: Polling a cada 5 segundos para detectar mudanças
+  useEffect(() => {
+    const interval = setInterval(() => {
+      loadFolders()
+    }, 5000) // Atualiza a cada 5 segundos
+
+    return () => clearInterval(interval)
+  }, [])
+
   /* -------------------------------------------------------
      DELETE FOLDER
   ------------------------------------------------------- */
@@ -68,8 +87,13 @@ export default function FolderManagement() {
       setDeletingId(id)
       await deleteFolder(id)
 
-      // Atualiza o front-end
-      setRootFolders(rootFolders.filter((f) => f.id !== id))
+      // 🔥 FIX 2: Atualiza AMBOS os estados (folders E rootFolders)
+      const updatedFolders = folders.filter((f) => f.id !== id)
+      const updatedRootFolders = rootFolders.filter((f) => f.id !== id)
+      
+      setFolders(updatedFolders)
+      setRootFolders(updatedRootFolders)
+      
       alert("✅ Pasta deletada com sucesso!")
     } catch (error) {
       console.error("❌ Erro ao deletar pasta:", error)
