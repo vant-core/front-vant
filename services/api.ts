@@ -26,7 +26,7 @@ const isLocalhost =
 
 const apiBaseURL = isLocalhost
   ? 'http://localhost:3000'
-  : 'https://back-end-vant-core.onrender.com';
+  : 'https://back-end-vant-core.onrender.com/';
 
 const api = axios.create({
   baseURL: apiBaseURL,
