@@ -230,9 +230,7 @@ export const downloadReportPDF = async (
   }
 };
 
-/**
- * Helper: Baixa PDF a partir do HTML
- */
+
 export const downloadPDFFromHTML = async (
   html: string,
   filename?: string
