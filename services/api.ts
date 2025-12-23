@@ -26,7 +26,7 @@ const isLocalhost =
 
 const apiBaseURL = isLocalhost
   ? 'http://localhost:3000'
-  : 'https://back-end-ypsc.onrender.com';
+  : 'https://back-end-vant-core.onrender.com';
 
 const api = axios.create({
   baseURL: apiBaseURL,
@@ -230,9 +230,7 @@ export const downloadReportPDF = async (
   }
 };
 
-/**
- * Helper: Baixa PDF a partir do HTML
- */
+
 export const downloadPDFFromHTML = async (
   html: string,
   filename?: string

@@ -64,6 +64,25 @@ export default function FolderDetailPage() {
     loadFolderData()
   }, [folderId])
 
+  // 🔥 FIX 1: Auto-refresh quando a página ganha foco
+  useEffect(() => {
+    const handleFocus = () => {
+      loadFolderData()
+    }
+
+    window.addEventListener('focus', handleFocus)
+    return () => window.removeEventListener('focus', handleFocus)
+  }, [folderId])
+
+  // 🔥 FIX 1: Polling a cada 5 segundos para detectar mudanças
+  useEffect(() => {
+    const interval = setInterval(() => {
+      loadFolderData()
+    }, 5000) // Atualiza a cada 5 segundos
+
+    return () => clearInterval(interval)
+  }, [folderId])
+
   /* -------------------------------------------------------
      SEARCH FILTER
   ------------------------------------------------------- */
@@ -105,9 +124,20 @@ export default function FolderDetailPage() {
     try {
       setDeletingId(id)
       await deleteItem(id)
+      
+      // 🔥 FIX 2: Remove o item dos estados imediatamente
       const newItems = items.filter((i) => i.id !== id)
       setItems(newItems)
       setFilteredItems(newItems)
+      
+      // 🔥 FIX 2: Atualiza o contador da pasta
+      if (folder) {
+        setFolder({
+          ...folder,
+          itemCount: newItems.length
+        })
+      }
+      
       alert("✅ Item deletado!")
     } catch (error) {
       console.error("❌ Erro ao deletar item:", error)
